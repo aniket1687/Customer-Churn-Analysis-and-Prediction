@@ -1,6 +1,17 @@
 import os
 print("Current Directory:", os.getcwd())
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# ======================================
+# Set Working Directory
+# ======================================
+os.chdir(r"D:\vs code\Customer_Churn_Project")
+
+# ======================================
+# Load Dataset
+# ======================================
 df = pd.read_csv("Telco_Customer_Churn_Dataset.csv")
 df["TotalCharges"] = pd.to_numeric(df["TotalCharges"], errors="coerce")
 df.dropna(inplace=True)
